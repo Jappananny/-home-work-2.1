@@ -20,18 +20,30 @@ public class Human{
 
      */
     public Human(String name, int yearOfBirth, String town, String job){
-        this.name = name;
-        if (town.length() >= 0 || town != null) {
+       if (name.length() <= 0 || name == null){
+           this.name = "Информация не указана";
+       } else {
+           this.name = name;
+       }
+        if (town.length() <= 0 || town == null) {
             this.town = "Информация не указана";
+        } else {
+            this.town = town;
         }
-        if (yearOfBirth >= 0){
+        if (yearOfBirth <= 0){
             this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
         }
-        if (job.length() >= 0 || job != null){
+
+        if (job.length() <= 0 || job == null){
             this.job = "Информация не указана";
+        } else {
+            this.job = job;
         }
     }
-
+    // Не получается привести конструктор к единому варианту что бы не ляпить кучу из конструкторов с 1-2 и т.д. перемеными.
+    //Кароче вариативность конструктора пока для меня тайна за 7 печатями кодинга на джаве. (((
 
 
     public int getYearOfBirth() {
